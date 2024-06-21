@@ -13,7 +13,6 @@ export default function App() {
 
 
   function onSubmit(data) {
-    console.log('onSubmint', data)
     setkoders([
       ...koders,
       { name: data.name, lastName: data.lastName, email: data.email }
@@ -105,8 +104,12 @@ export default function App() {
               key={`koder-${idx}`}
               className='bg-white/20 rounded pr-4 pl-4 flex flex-row justify-between items-center'
             >
-              <p>-{koder.name} {koder.lastName} </p>
-              <p>-{koder.email}</p>
+              <span></span>
+              <div className='flex flex-col'>
+              <p>{koder.name} {koder.lastName} </p>
+              <p>{koder.email}</p>
+              </div>
+              
               <span
                 className='text-[37px] text-white cursor-pointer select-none hover:transform hover:scale-110 transition-transform hover:text-red-700'
                 onClick={() => removekoder(idx)}
